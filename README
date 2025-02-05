@@ -1,0 +1,52 @@
+Luke Walpole
+w20020794
+
+
+Web Application Main Landing Page 
+https://w20020794.nuwebspace.co.uk/coursework/app/
+
+
+Endpoints
+
+GET /Developer
+https://w20020794.nuwebspace.co.uk/coursework/api/developer
+No parameters included
+
+GET /Country
+https://w20020794.nuwebspace.co.uk/coursework/api/country
+No parameters included, however, city and institution are also retrieved to provide additional functionality in the frontend
+
+GET /Preview
+https://w20020794.nuwebspace.co.uk/coursework/api/preview
+Params:
+* limit: Get the integer limit for the number of items that can be returned in the response (e.g. https://w20020794.nuwebspace.co.uk/coursework/api/preview?limit=2)
+
+GET /AuthorAndAffiliation
+https://w20020794.nuwebspace.co.uk/coursework/api/authorandaffiliation
+Params:
+* content: Get the details for authors of that content when you submit the content id (e.g. https://w20020794.nuwebspace.co.uk/coursework/api/authorandaffiliation?content=96102)
+* country: Get the details for affiliations of the specified country (e.g. https://w20020794.nuwebspace.co.uk/coursework/api/authorandaffiliation?country=canada)
+Content and Country can not be used together and results in an error message (e.g. https://w20020794.nuwebspace.co.uk/coursework/api/authorandaffiliation?content=96102&country=canada)
+
+GET /Content
+https://w20020794.nuwebspace.co.uk/coursework/api/content
+Params: 
+* page: Get 20 results from the page that is specified (e.g. https://w20020794.nuwebspace.co.uk/coursework/api/content?page=2)
+* type: Get content from that specified type (e.g. https://w20020794.nuwebspace.co.uk/coursework/api/content?type=course)
+Page and Type parameter can be used together (https://w20020794.nuwebspace.co.uk/coursework/api/content?page=2&type=course)
+
+GET/POST (Not actually posting to the api) /token
+https://w20020794.nuwebspace.co.uk/coursework/api/token
+Params:
+* username and password: If a user submits the correct username and password via the authorisation headers then a JWT is issued.
+  e.g. username: admin@example.com
+       password: CHI2023
+       JWT issued: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImV4cCI6MTcwNjE5NTIwMSwiaWF0IjoxNzA2MTkzNDAxLCJpc3MiOiJ3MjAwMjA3OTQifQ.UPtD5tp1w5fCWdKpUnX4I1-f4wPvOrhfD_VNgUUKOnM
+
+GET/POST/DELETE /note
+https://w20020794.nuwebspace.co.uk/coursework/api/note
+Param:
+For all parameters, the must pass the JWT as a bearer token to view/edit the contents of the database. 
+* getNote: they can make a get request to view the notes that are in the database.
+* postNote: they can make a post request to insert a note about a piece of content into the database. Only one note per piece of content can be inserted at a time. 
+* deleteNote: they can make a delete request to remove a note about a piece of content from the database. The delete request can't be done in the body of Postman. 
