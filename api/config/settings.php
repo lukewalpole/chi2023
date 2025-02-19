@@ -8,7 +8,7 @@
  * @author Luke Walpole
  */
 
-define('BASEPATH', '/chi2023/api');
+define('BASEPATH', '/api');
 define('CHI2023_DATABASE', 'db/chi2023.sqlite');
 define('USERS_DATABASE', 'db/users.sqlite');
 define('SECRET', 'ya^!RK+gzcc3wCcp(5dHNn_S1{Z_T#');
