@@ -35,7 +35,7 @@ function Home() {
     }
      
     const fetchData = () => { 
-        fetch('https://w20020794.nuwebspace.co.uk/coursework/api/preview?limit=1')
+        fetch('https://chi2023-backend.onrender.com/api/preview?limit=1')
         .then( response => handleResponse(response) )
         .then( json => handleJSON(json) )
         .catch( err => { console.log(err.message) })

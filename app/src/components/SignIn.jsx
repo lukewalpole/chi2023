@@ -29,7 +29,7 @@ function SignIn() {
     const signIn = () => {
         const encodedString = btoa(username + ':' + password)
 
-        fetch('https://w20020794.nuwebspace.co.uk/coursework/api/token',
+        fetch('https://chi2023-backend.onrender.com/api/token',
         {
             method: 'GET',
             headers: new Headers( { "Authorization": "Basic " + encodedString })
